@@ -23,9 +23,7 @@ using OfficeOpenXml.Drawing;
 namespace WindowsFormsApp1
 {
     public partial class Form1 : Form
-    {
-        string filePath2;
-       
+    {  
         public Form1()
         {       
             InitializeComponent(); 
@@ -37,7 +35,6 @@ namespace WindowsFormsApp1
             File.Copy("Duplicatesheet.xlsx", "Duplicatesheet1.xlsx");
 
             ExcelPackage.LicenseContext = OfficeOpenXml.LicenseContext.NonCommercial;
-            OfficeOpenXml.Drawing.ExcelPicture excelImage;
             //provide file path
             if (openFileDialog1.ShowDialog() == DialogResult.Cancel)
                 return;
@@ -156,17 +153,8 @@ namespace WindowsFormsApp1
                     
                     i++;
                 }
-                
             }
             Process.Start("C:/Program Files/Microsoft Office/root/Office16/EXCEL", "Duplicatesheet1.xlsx");
-        }
-       
-        private void button2_Click(object sender, EventArgs e)
-        {
-            if (openFileDialog2.ShowDialog() == DialogResult.Cancel)
-                return;
-            // получаем выбранный файл
-            filePath2 = openFileDialog2.FileName;
         }
     }
 }
